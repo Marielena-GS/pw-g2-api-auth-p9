@@ -187,3 +187,7 @@
 <!-- String hijos = this.uriInfo.getBaseUriBuilder().path(EstudianteResource.class).path(String.valueOf(er.getId())).path("hijos").build().toString(); -->
 <!-- er.setLink(List.of(new LinkDto(hijos, "hijos"))); -->
 <!-- return er; -->
+<!-- npm create vue@latest -->
+<!-- yes, nombre del proyecto, vistest, Router enter enter, npm run serve-->
+<!-- .\mvnw.cmd quarkus:dev -->
+<!-- ResEasy Classic, Json B, hibernate orm jcbc iver -->
