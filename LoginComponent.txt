@@ -1,0 +1,51 @@
+<template>
+    <div class="container">
+        <label for="username">Usuario</label>   
+        <input type="text" placeholder="example" id="username" v-model="Usuario.username">
+        <label for="password">Contraseña</label>
+        <input type="password" placeholder="password" id="password" v-model="Usuario.password">
+        <button @click="autenticar">Iniciar Sesión</button>
+
+        <label v-if="isCorrect">Credenciales Incorrectas</label>
+        <label v-if="isAutenticate">Sesión Iniciada</label>
+    
+    </div>
+</template>
+
+<script>
+import { validarFacade } from '@/client/TokenClient';
+import router from "../router";
+
+export default {
+    data(){
+        return {
+            Usuario:{
+                username:"",
+                password:""
+            },
+            isCorrect:false,
+            isAutenticate:false
+        }
+    },
+    methods:{
+        async autenticar(){
+            const token = await validarFacade(this.Usuario);
+
+            if(token===undefined){
+                this.isCorrect=true
+                return;
+            }
+            localStorage.setItem("token", token)
+            localStorage.setItem("estaAutentificado", true);
+            this.isAutenticate=true
+            setTimeout(()=>{
+                router.push({ name: 'home'});
+            },1000)
+        }
+    }
+}
+</script>
+
+<style>
+</style>
+
