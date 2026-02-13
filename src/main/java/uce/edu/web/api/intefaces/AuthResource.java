@@ -40,7 +40,7 @@ public class AuthResource {
         if (token.getIsValid()) {
 
             // base de datos tabla usuario id/usuario/password/rol agregar eso
-            String issuer = "cursos-auth";
+            String issuer = "matricula-auth";
             long ttl = 3600;
 
             Instant now = Instant.now();

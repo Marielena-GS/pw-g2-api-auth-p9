@@ -6,12 +6,12 @@ import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
 import uce.edu.web.api.application.representation.LoginRequest;
 import uce.edu.web.api.application.representation.Token;
-import jakarta.ws.rs.core.MediaType;
 
-@RegisterRestClient(configKey = "cursos-api") // registro del cliente rest
-@Path("/cursos/api/v1.0/usuarios") // ruta base del servicio remoto
+@RegisterRestClient(configKey = "matricula-api") // registro del cliente rest
+@Path("/matricula/api/v1.0/usuarios") // ruta base del servicio remoto
 @Consumes(MediaType.APPLICATION_JSON) // indica que el cliente envia json
 @Produces(MediaType.APPLICATION_JSON) // indica que el cliente espera json
 public interface MatriculaClient {
